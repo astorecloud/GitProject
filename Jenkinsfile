@@ -13,8 +13,8 @@ pipeline
                 }
             }
         }
-    }    
-        stage('Remove Container') 
+        
+        stage ('Remove Container') 
         {
             steps 
             {
@@ -23,7 +23,7 @@ pipeline
                 }
             }
         }
-         stage('Remove Container Image') 
+         stage ('Remove Container Image') 
         {
             steps 
             {
@@ -32,7 +32,7 @@ pipeline
                 }
             }
         }
-        stage('Build docker image') 
+        stage ('Build docker image') 
         {
             steps 
             {
@@ -50,7 +50,7 @@ pipeline
                 }
             }
         }
-    
+    }
     post 
     {   
         always
