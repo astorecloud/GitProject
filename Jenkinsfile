@@ -23,7 +23,7 @@ pipeline
             steps 
             {
                 script{
-                    sh 'docker buil -t imagetest .'
+                    sh 'docker build -t imagetest .'
                 }
             }
         }
