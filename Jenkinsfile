@@ -12,8 +12,8 @@ pipeline
                     sh 'docker stop testcontainer'
                 }
             }
-            }
         }
+    }    
         stage('Remove Container') 
         {
             steps 
@@ -50,7 +50,7 @@ pipeline
                 }
             }
         }
-    }
+    
     post 
     {   
         always
