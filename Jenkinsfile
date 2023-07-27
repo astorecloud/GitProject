@@ -18,11 +18,13 @@ pipeline
                 echo 'Test App'
             }
         }
-        stage('Deploy') 
+        stage('Build docker image') 
         {
             steps 
             {
-                echo 'Deploy App'
+                script{
+                    sh 'docker buil -t imagetest .'
+                }
             }
         }
     }
