@@ -27,6 +27,15 @@ pipeline
                 }
             }
         }
+        stage('Build docker Container') 
+        {
+            steps 
+            {
+                script{
+                    sh 'docker run -d --name testcontainer -p 8181:80 imagetest '
+                }
+            }
+        }
     }
     post 
     {   
