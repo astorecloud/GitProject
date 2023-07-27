@@ -9,7 +9,7 @@ pipeline
             steps 
             {
                script{
-                    sh 'docker stop imagetest'
+                    sh 'docker stop testcontainer'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline
             steps 
             {
                 script {
-                    sh 'docker rm imagetest'
+                    sh 'docker rm testcontainer'
                 }
             }
         }
