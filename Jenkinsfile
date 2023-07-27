@@ -4,18 +4,32 @@ pipeline
 
     stages 
     {
-        stage ('Build') 
+        stage ('Stop Container') 
         {
             steps 
             {
-                echo 'Build'
+               script{
+                    sh 'docker stop testcontainer'
+                }
+            }
             }
         }
-        stage('Test') 
+        stage('Remove Container') 
         {
             steps 
             {
-                echo 'Test App'
+                script {
+                    sh 'docker rm testcontainer'
+                }
+            }
+        }
+         stage('Remove Container Image') 
+        {
+            steps 
+            {
+                script {
+                    sh 'docker rmi imagetest '
+                }
             }
         }
         stage('Build docker image') 
